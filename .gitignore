@@ -1,0 +1,15 @@
+# cache created by python
+__pycache__
+*egg-info
+
+# data files
+*.pth
+*.pt
+*.mdb
+*.pkl
+*.csv
+/data
+
+# log files
+/wandb
+/logs

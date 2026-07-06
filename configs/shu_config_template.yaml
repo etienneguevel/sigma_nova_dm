@@ -1,0 +1,31 @@
+group:
+log_metrics: True
+
+data:
+  type: lmdb
+  train: [1, 16]
+  valid: [16, 21]
+  test: [21, 26]
+  sampling_freq: 250
+  target_freq: 200
+  datadir: mat
+  db_dir: data/shu/processed
+
+model:
+  arch: cbramod
+  use_pretrained_weights: True
+  freeze_backbone: False
+  foundation_dir: pretrained_weights/pretrained_weights.pth
+  classifier: all_patch_reps
+  dropout: 0.1
+
+train:
+  bsz: 64
+  num_epochs: 50
+  lr: 1e-3
+  lr_backbone: 1e-4
+  weight_decay: 5e-2
+  grad_clipping: 1
+
+eval:
+  bsz: 64
